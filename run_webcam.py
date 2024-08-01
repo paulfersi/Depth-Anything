@@ -11,7 +11,7 @@ from depth_anything.dpt import DepthAnything
 from depth_anything.util.transform import Resize, NormalizeImage, PrepareForNet
 
 #encoders = ['vits', 'vitb', 'vitl']
-encoder = 'vits'
+encoder = 'vits'   #the small one
 video_path = 0
 
 
