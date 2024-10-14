@@ -8,7 +8,7 @@ from depth_anything.dpt import DepthAnything
 from depth_anything.util.transform import Resize, NormalizeImage, PrepareForNet
 
 # Configuration
-encoder = 'vits'
+encoder = 'vits' # s for small, also base and large
 image_path = 'original_frame.jpg'  # Image captured by the webcam
 depth_output_path = 'depth_frame.jpg'
 

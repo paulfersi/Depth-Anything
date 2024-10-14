@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'depth_anything_wrapper = depth_anything_wrapper_node.depth_anything_wrapper_node:main'
         ],
     },
 )
