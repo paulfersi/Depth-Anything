@@ -53,6 +53,8 @@ class DepthAnythingWrapperNode(Node):
 
         depth_image = self.compute_depth(cv_image)
 
+        self.publish_depth(depth_image,msg.header)
+
     def convert_ros_to_cv(self, ros_image):
         # Convert a ROS Image message to a NumPy array (OpenCV format)
         np_arr = np.frombuffer(ros_image.data, np.uint8)
@@ -61,21 +63,38 @@ class DepthAnythingWrapperNode(Node):
 
 
     def compute_depth(self,raw_image):
-        # publish_depth()
-        pass
+        image = cv2.cvtColor(raw_image, cv2.COLOR_BGR2RGB) / 255.0
+        h, w = image.shape[:2]
+        image = self.transform({'image': image})['image']
+        image = torch.from_numpy(image).unsqueeze(0).to(self.device)
 
-    def publish_depth(self):
-        pass
+        # Compute depth
+        with torch.no_grad():
+            depth = self.depth_anything(image)
+
+        # Resize depth to original image size
+        depth = F.interpolate(depth[None], (h, w), mode='bilinear', align_corners=False)[0, 0]
+        depth = (depth - depth.min()) / (depth.max() - depth.min()) * 255.0
+        depth = depth.cpu().numpy().astype(np.uint8)
+
+        return depth
+
+    def publish_depth(self,depth_image,header):
+        depth_msg = Image()
+        depth_msg.header = header 
+        depth_msg.height,depth_msg.width = depth_image.shape 
+        depth_msg.encoding = 'mono8'  # Single channel (depth)
+        depth_msg.is_bigendian = 0
+        depth_msg.step = depth_msg.width
+        depth_msg.data = depth_image.tobytes()
+        self.depth_publisher.publish(depth_msg)
 
 
 def main(args=None):
     rclpy.init(args=args)
-
-    depth_anything_wrapper_node = DepthAnythingWrapperNode()
-
-    rclpy.spin(depth_anything_wrapper_node)
-
-    depth_anything_wrapper_node.destroy_node()
+    node = DepthAnythingWrapperNode()
+    rclpy.spin(node)
+    node.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
