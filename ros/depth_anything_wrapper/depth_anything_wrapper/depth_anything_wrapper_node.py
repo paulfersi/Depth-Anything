@@ -11,7 +11,6 @@ from torchvision.transforms import Compose
 from depth_anything.dpt import DepthAnything
 from depth_anything.util.transform import Resize, NormalizeImage, PrepareForNet
 
-from std_msgs.msg import String
 
 
 class DepthAnythingWrapperNode(Node):
