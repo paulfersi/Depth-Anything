@@ -1,0 +1,35 @@
+running egg_info
+creating ../build/depth_anything_wrapper/depth_anything_wrapper.egg-info
+writing ../build/depth_anything_wrapper/depth_anything_wrapper.egg-info/PKG-INFO
+writing dependency_links to ../build/depth_anything_wrapper/depth_anything_wrapper.egg-info/dependency_links.txt
+writing entry points to ../build/depth_anything_wrapper/depth_anything_wrapper.egg-info/entry_points.txt
+writing requirements to ../build/depth_anything_wrapper/depth_anything_wrapper.egg-info/requires.txt
+writing top-level names to ../build/depth_anything_wrapper/depth_anything_wrapper.egg-info/top_level.txt
+writing manifest file '../build/depth_anything_wrapper/depth_anything_wrapper.egg-info/SOURCES.txt'
+reading manifest file '../build/depth_anything_wrapper/depth_anything_wrapper.egg-info/SOURCES.txt'
+writing manifest file '../build/depth_anything_wrapper/depth_anything_wrapper.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/sonia/Depth-Anything/ros/build/depth_anything_wrapper/build
+creating /home/sonia/Depth-Anything/ros/build/depth_anything_wrapper/build/lib
+creating /home/sonia/Depth-Anything/ros/build/depth_anything_wrapper/build/lib/depth_anything_wrapper
+copying depth_anything_wrapper/depth_anything_wrapper_node.py -> /home/sonia/Depth-Anything/ros/build/depth_anything_wrapper/build/lib/depth_anything_wrapper
+copying depth_anything_wrapper/__init__.py -> /home/sonia/Depth-Anything/ros/build/depth_anything_wrapper/build/lib/depth_anything_wrapper
+running install
+running install_lib
+creating /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/lib/python3.8/site-packages/depth_anything_wrapper
+copying /home/sonia/Depth-Anything/ros/build/depth_anything_wrapper/build/lib/depth_anything_wrapper/depth_anything_wrapper_node.py -> /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/lib/python3.8/site-packages/depth_anything_wrapper
+copying /home/sonia/Depth-Anything/ros/build/depth_anything_wrapper/build/lib/depth_anything_wrapper/__init__.py -> /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/lib/python3.8/site-packages/depth_anything_wrapper
+byte-compiling /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/lib/python3.8/site-packages/depth_anything_wrapper/depth_anything_wrapper_node.py to depth_anything_wrapper_node.cpython-38.pyc
+byte-compiling /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/lib/python3.8/site-packages/depth_anything_wrapper/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/share/ament_index
+creating /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/share/ament_index/resource_index
+creating /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/share/ament_index/resource_index/packages
+copying resource/depth_anything_wrapper -> /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/share/ament_index/resource_index/packages
+copying package.xml -> /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/share/depth_anything_wrapper
+running install_egg_info
+Copying ../build/depth_anything_wrapper/depth_anything_wrapper.egg-info to /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/lib/python3.8/site-packages/depth_anything_wrapper-0.0.0-py3.8.egg-info
+running install_scripts
+Installing depth_anything_wrapper script to /home/sonia/Depth-Anything/ros/install/depth_anything_wrapper/lib/depth_anything_wrapper
+writing list of installed files to '/home/sonia/Depth-Anything/ros/build/depth_anything_wrapper/install.log'
